@@ -1,20 +1,33 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Box, Button, Label, Input, Select, Flex, Radio } from 'theme-ui';
+import { Modal } from 'react-responsive-modal';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
-  const [values, setValues] = useState({
-    fullname: '',
-    age: '',
-    age: '',
-    level: '',
-    university: '',
-    major: '',
-    number: '',
-  });
+  const form = useRef();
+
+  const [open, setOpen] = useState(false);
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs.sendForm('service_v7358qa', 'template_77rutnc', form.current, 'user_f5BW8mcuEEqY7UJccX0dM').then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+    e.target.reset();
+    onOpenModal();
+  }
+
   return (
     <Box>
-      <Box as="form">
+      <Box as="form" ref={form} onSubmit={sendEmail}>
         <Label htmlFor="fullname">Fullname</Label>
         <Input name="fullname" id="fullname" mb={5} />
         <Label htmlFor="age">Age</Label>
@@ -34,10 +47,10 @@ export default function ContactForm() {
         <Input name="major" id="major" mb={5}></Input>
         <Label htmlFor="number">Phone Number</Label>
         <Input name="number" id="number" mb={5}></Input>
-        <Button type="submit" variant="primary">
-          {' '}
-          Submit{' '}
-        </Button>
+        <Button type="submit">Submit</Button>
+        <Modal open={open} onClose={onCloseModal} center>
+          <h2>Success </h2>
+        </Modal>
       </Box>
     </Box>
   );

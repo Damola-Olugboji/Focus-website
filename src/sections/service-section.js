@@ -15,7 +15,7 @@ const data = {
     {
       id: 1,
       imgSrc: null,
-      altText: 'Smart Features',
+      altText: 'About us.',
       title: 'Serving university students.',
       text:
         '"Focus 101" is a ministry at Agape House of Worship dedicated to serving students all the way from the undergraduate level to students pursuing their masters and doctorate degrees. Our goal is to create an environment where our university students can provide consistent support and fellowship to one another!',

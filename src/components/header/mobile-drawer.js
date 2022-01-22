@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box } from 'theme-ui';
+import { Box, Link as ExternalLink } from 'theme-ui';
 import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
@@ -51,7 +51,9 @@ export default function MobileDrawer() {
             <Box sx={styles.social}>
               {social.map((socialItem, index) => (
                 <Box as="span" key={index} sx={styles.social.icon}>
-                  <Link to={socialItem.path}>{socialItem.icon}</Link>
+                  <ExternalLink target="_blank" sx={styles.links.nav} href={socialItem.path}>
+                    {socialItem.icon}
+                  </ExternalLink>
                 </Box>
               ))}
             </Box>
@@ -63,6 +65,17 @@ export default function MobileDrawer() {
 }
 
 const styles = {
+  links: {
+    bold: {
+      fontWeight: 'bold',
+    },
+    nav: {
+      fontWeight: 'bold',
+      color: 'inherit',
+      textDecoration: 'none',
+    },
+  },
+
   handler: {
     display: 'flex',
     alignItems: 'center',

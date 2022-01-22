@@ -8,6 +8,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
@@ -28,6 +29,7 @@
     "react-modal-video": "^1.2.6",
     "react-multi-carousel": "^2.5.5",
     "react-responsive-carousel": "^3.2.22",
+    "react-responsive-modal": "^6.2.0",
     "react-responsive-timeline": "^0.1.5",
     "react-router": "^6.2.1",
     "react-router-dom": "^5.2.0",

@@ -26,7 +26,7 @@ const data = [
         title="Focus 101 Friendsgiving Party"
         description="Thanksgiving + Friends = Friendsgiving!"
         align="left"
-        link="https://youtu.be/JLZUNjMpO8s"
+        link="https://youtu.be/_BJNNFRyuOs"
         linkText="Events"
       />
     ),
