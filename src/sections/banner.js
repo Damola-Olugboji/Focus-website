@@ -14,7 +14,7 @@ export default function Banner() {
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary">
+          <Heading as="h1" variant="heroPrimary" sx={styles.banner.bannerHeader}>
             FOCUS 101
           </Heading>
           <Text as="p" variant="heroSecondary">
@@ -50,6 +50,11 @@ const styles = {
     borderRadius: 20,
   },
   banner: {
+    bannerHeader: {
+      '@media screen and (max-width: 600px)': {
+        display: 'none',
+      },
+    },
     pt: ['140px', '145px', '155px', '170px', null, null, '180px', '215px'],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',

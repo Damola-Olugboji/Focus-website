@@ -75,10 +75,16 @@ export default {
       pt: '100px',
       pb: [8, null, 9, null, null, 10, null, '170px'],
       overflow: 'hidden',
+      '@media screen and (max-width: 600px)': {
+        pt: '0px',
+      },
     },
     services: {
       pt: '110px',
       pb: ['90px', null, 9, null, null, 10, null, '150px'],
+      '@media screen and (max-width: 600px)': {
+        pt: '40px',
+      },
     },
   },
   sectionHeader: {
