@@ -1,19 +1,21 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
+import { jsx, Container, Flex, Button, Text, Link as ThemeLink } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link as Navlink } from 'react-scroll';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
-import { Link } from 'theme-ui';
+import Link from 'next/link';
+import { red } from '@material-ui/core/colors';
 
 export default function Header({ className }) {
   return (
     <header sx={styles.header} className={className} id="Header">
       <Container sx={styles.container}>
         <h1>
-          <Link href="/" sx={styles.links.nav}>
+          {' '}
+          <ThemeLink href="/" sx={styles.links.nav}>
             FOCUS 101
-          </Link>
+          </ThemeLink>
         </h1>
         <Flex as="nav" sx={styles.nav}>
           {menuItems.map((menuItem, index) => (
@@ -22,7 +24,7 @@ export default function Header({ className }) {
             </Navlink>
           ))}
         </Flex>
-        <Link href="/contact">
+        <Link href="/contact" passHref>
           <Button>Get in Touch</Button>
         </Link>
         <MobileDrawer />
@@ -46,13 +48,13 @@ const positionAnim = keyframes`
 
 const styles = {
   links: {
-    bold: {
-      fontWeight: 'bold',
-    },
     nav: {
       fontWeight: 'bold',
       color: 'inherit',
       textDecoration: 'none',
+    },
+    bold: {
+      fontWeight: 'bold',
     },
   },
   header: {

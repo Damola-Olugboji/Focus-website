@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 /** @jsx jsx */
-import { jsx, Container, Box, Grid, Text, Heading, Button, Image, Link } from 'theme-ui';
+import { jsx, Container, Box, Grid, Text, Heading, Button, Image } from 'theme-ui';
 import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
+import Link from 'next/link';
 
-import ServiceThumb from 'assets/banner-image5.gif';
+import ServiceThumb from 'assets/banner-image6.jpeg';
 import shapePattern from 'assets/shape-pattern1.png';
 
 const data = {
@@ -47,7 +48,7 @@ export default function ServiceSection() {
                 <Box sx={styles.wrapper}>
                   <Heading sx={styles.wrapper.title}> {feature.title}</Heading>
                   <Text sx={styles.wrapper.subTitle}> {feature.text}</Text>
-                  <Link href="/contact" sx={styles.wrapper.links.nav}>
+                  <Link href="/contact" sx={styles.wrapper.links.nav} passHref>
                     <Text>
                       {' '}
                       <u>{feature.linkText}</u>

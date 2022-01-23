@@ -42,8 +42,8 @@ const data = [
     sub: '26 Nov 2021',
   },
   {
-    title: <SingleEvent title="Paint and Sip" description="Painting and sipping" linkText="Event Highlights" link="www.google.com" align="left" />,
-    sub: '26 Nov 2020',
+    title: <SingleEvent title="Paint and Sip Event" description="" align="left" />,
+    sub: '16 Jan 2021',
   },
 ];
 
