@@ -12,7 +12,7 @@ export default function Header({ className }) {
       <Container sx={styles.container}>
         <h1>
           <Link href="/" sx={styles.links.nav}>
-            <a>FOCUS 101</a>
+            FOCUS 101
           </Link>
         </h1>
         <Flex as="nav" sx={styles.nav}>
@@ -23,9 +23,7 @@ export default function Header({ className }) {
           ))}
         </Flex>
         <Link href="/contact">
-          <Button>
-            <a> Get in Touch</a>
-          </Button>
+          <Button>Get in Touch</Button>
         </Link>
         <MobileDrawer />
       </Container>

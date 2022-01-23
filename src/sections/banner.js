@@ -24,16 +24,16 @@ export default function Banner() {
         <Box sx={styles.banner.imageBox}>
           <Carousel showStatus={false} showIndicators={false} swipeable={false} interval={3000} autoPlay={true} infiniteLoop={true}>
             <div>
-              <Image sx={styles.image} src={BannerImg} />
-            </div>
-            <div>
-              <Image sx={styles.image} src={BannerImg5} />
-            </div>
-            <div>
               <Image sx={styles.image} src={BannerImg3} />
             </div>
             <div>
               <Image sx={styles.image} src={BannerImg4} />
+            </div>
+            <div>
+              <Image sx={styles.image} src={BannerImg} />
+            </div>
+            <div>
+              <Image sx={styles.image} src={BannerImg5} />
             </div>
             <div>
               <Image sx={styles.image} src={BannerImg2} />

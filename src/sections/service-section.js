@@ -5,7 +5,7 @@ import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
 
-import ServiceThumb from 'assets/podcastimage.jpg';
+import ServiceThumb from 'assets/banner-image5.gif';
 import shapePattern from 'assets/shape-pattern1.png';
 
 const data = {

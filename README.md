@@ -1,11 +1,2 @@
-## Getting Started
-
-Install the dependencies and run the development server
-
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
+Website for FOCUS 101 at Agape House of Worship
+built with react/nextjs

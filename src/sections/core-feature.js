@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Image, Button } from 'theme-ui';
 import TextFeature from 'components/text-feature';
-import BannerImg from 'assets/banner-image.png';
+import BannerImg from 'assets/content-image.jpg';
 import shapePattern from 'assets/shape-pattern2.png';
 import { keyframes } from '@emotion/core';
 import { useState } from 'react';
@@ -32,12 +32,12 @@ export default function CoreFeature() {
           <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />{' '}
           <Link href="/events" passHref>
             <Button>
-              <a> Events </a>
+              <a> View Events </a>
             </Button>
           </Link>
         </Box>
         <Box sx={styles.thumbnail}>
-          <Image src={BannerImg} alt="Thumbnail" />
+          <Image src={BannerImg} alt="Thumbnail" sx={styles.image} />
           <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
             <span>
               <IoIosPlay />
@@ -47,7 +47,7 @@ export default function CoreFeature() {
             <Image src={shapePattern} alt="Shape" />
           </Box>
         </Box>
-        <ModalVideo channel="youtube" isOpen={videoOpen} videoId="EbDMNjT-QpI" onClose={() => setVideoOpen(false)} />
+        <ModalVideo channel="youtube" isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
       </Container>
     </section>
   );
@@ -66,6 +66,9 @@ const playPluse = keyframes`
 `;
 
 const styles = {
+  image: {
+    borderRadius: 20,
+  },
   containerBox: {
     display: 'flex',
     alignItems: 'center',
