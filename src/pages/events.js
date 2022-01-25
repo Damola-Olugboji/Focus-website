@@ -22,9 +22,7 @@ export default function Events() {
         <Box sx={styles.container}>
           <BasicTimeline />
         </Box>
-        <Box sx={styles.announcementBox}>
-          <Text sx={styles.announcementText}> More Events Coming Soon!</Text>
-        </Box>
+        <Box sx={styles.announcementBox}></Box>
       </div>
     </ThemeProvider>
   );
@@ -44,6 +42,7 @@ const styles = {
     justifyContent: 'center',
     display: 'flex',
     textAlign: 'center',
+    pt: '40px',
   },
   headerContainer: {
     cursor: 'pointer',
