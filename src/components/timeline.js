@@ -15,7 +15,7 @@ const data = [
         align="left"
       />
     ),
-    sub: '9 Feb 2022',
+    sub: '9 Feb 2022 | 9pm',
   },
   {
     title: (
