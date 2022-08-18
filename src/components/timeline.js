@@ -7,11 +7,140 @@ const data = [
   {
     title: (
       <SingleEvent
+        title="College Ministry Graduate Celebration!"
+        description="Join us as we celebrate our new college graduates!"
+        extraDescription="Location: Refer to the group chat"
+        align="left"
+      />
+    ),
+    sub: '24 July 2022 | 1:30pm',
+  },
+  {
+    title: (
+      <SingleEvent
         title="Focus 101 Zoom Meeting"
+        description="Join us on zoom!"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '17 July 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us on zoom!"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '26 Jun 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Memorial Day Game Night"
+        description="Join us for good food, fun games, and a great time!"
+        extraDescription="Location: Refer to the group chat"
+        align="left"
+      />
+    ),
+    sub: '30 May 2022 | 6:30pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us on zoom!"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '15 May 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us in continuing our bible study series! (week 5)"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '24 Apr 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us in continuing our bible study series! (week 4)"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '10 Apr 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us in continuing our bible study series! (week 3)"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '27 Mar 2022 | 9pm',
+  },
+
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us in continuing our bible study series! (week 2)"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '13 Mar 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
+        description="Join us in discussing our first bible study! (week 1)"
+        extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
+        link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
+        linkText="Join Here"
+        align="left"
+      />
+    ),
+    sub: '27 Feb 2022 | 9pm',
+  },
+  {
+    title: (
+      <SingleEvent
+        title="Focus 101 Zoom Bible Study"
         description="Join us for our first zoom meeting of 2022 "
         extraDescription="Meeting ID: 569 966 0936,  PWD: 171438"
         link="https://rutgers.zoom.us/my/omo19?pwd=aExPYXFTWFZsc1VmbDM1UGJibXZyZz09"
         linkText="Join Here"
+        link2="https://docs.google.com/document/d/1E3m90ZWNCUUX2_oAhdPM223DOA9teHCFB6awGuI8J40/edit?usp=sharing"
+        link2Text="Meeting Notes"
         align="left"
       />
     ),

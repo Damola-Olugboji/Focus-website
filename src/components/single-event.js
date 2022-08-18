@@ -1,6 +1,6 @@
 import { Box, Text } from 'theme-ui';
 
-export default function SingleEvent({ title, description, extraDescription, align, link, linkText }) {
+export default function SingleEvent({ title, description, extraDescription, align, link, linkText, link2, link2Text }) {
   return (
     <Box sx={{ textAlgin: { align }, alignItems: 'center' }}>
       <Text as="h2">{title}</Text>
@@ -15,6 +15,14 @@ export default function SingleEvent({ title, description, extraDescription, alig
           <a href={link} target="_blank" rel="noopener noreferrer">
             {' '}
             {linkText}
+          </a>
+        </Text>
+      )}
+      {link2 && (
+        <Text as="p" sx={styles.text}>
+          <a href={link2} target="_blank" rel="noopener noreferrer">
+            {' '}
+            {link2Text}
           </a>
         </Text>
       )}

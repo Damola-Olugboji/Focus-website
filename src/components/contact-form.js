@@ -12,7 +12,6 @@ export default function ContactForm() {
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
   function sendEmail(e) {
-    e.preventDefault();
     emailjs.sendForm('service_v7358qa', 'template_77rutnc', form.current, 'user_f5BW8mcuEEqY7UJccX0dM').then(
       (result) => {
         console.log(result.text);
@@ -22,7 +21,6 @@ export default function ContactForm() {
       }
     );
     e.target.reset();
-    onOpenModal();
   }
 
   return (
@@ -35,10 +33,16 @@ export default function ContactForm() {
         <Label htmlFor="level">Level</Label>
         <Flex mb={5}>
           <Label>
-            <Radio name="level" value="undergraduate" sx={styles.radioStyle} /> Undegraduate
+            <Radio name="level" value="freshman" sx={styles.radioStyle} /> Freshman
           </Label>
           <Label>
-            <Radio name="level" value="graduate" sx={styles.radioStyle} /> Graduate
+            <Radio name="level" value="sophomore" sx={styles.radioStyle} /> Sophomore
+          </Label>
+          <Label>
+            <Radio name="level" value="junior" sx={styles.radioStyle} /> Junior
+          </Label>
+          <Label>
+            <Radio name="level" value="senior" sx={styles.radioStyle} /> Senior
           </Label>
         </Flex>
         <Label htmlFor="university">What post-secondary institution are you attending?</Label>
