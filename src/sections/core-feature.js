@@ -5,7 +5,7 @@ import BannerImg from 'assets/content-image.jpg';
 import shapePattern from 'assets/shape-pattern2.png';
 import { keyframes } from '@emotion/core';
 import { useState } from 'react';
-import { Link } from 'next/link';
+import Link from 'next/link';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
 import { useMediaQuery } from 'react-responsive'

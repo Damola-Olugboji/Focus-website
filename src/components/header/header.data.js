@@ -11,8 +11,4 @@ export default [
     path: 'events',
     label: 'Events',
   },
-  {
-    path: 'contact',
-    label: 'Contact Us',
-  },
 ];

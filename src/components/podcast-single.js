@@ -1,12 +1,11 @@
 import React from 'react'
 import theme from 'theme'
 import { Box, Text, Button, ThemeProvider, Flex, Card, Link } from 'theme-ui'
-import ReactAudioPlayer from 'react-audio-player';
-import { FaYoutube, FaSpotify, FaAnchor, FaExclamationTriangle } from 'react-icons/fa'
+import { FaYoutube, FaSpotify, FaAnchor } from 'react-icons/fa'
 import { useMediaQuery } from 'react-responsive'
 import useCollapse from 'react-collapsed'
 
-export default function PodcastSingle({ title, description, disabled, isNew, releaseDate, extraDescription, spotifyLink, youtubeLink, anchorLink, image, }) {
+export default function PodcastSingle({ title, description, disabled, releaseDate, extraDescription, spotifyLink, youtubeLink, anchorLink, image, }) {
 
     const styles = {
         descriptionBox: {

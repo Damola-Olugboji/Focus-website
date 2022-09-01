@@ -11,7 +11,7 @@ export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="Focus" />
+        <SEO title="Focus101" />
         <Banner />
         <ServiceSection />
         <CoreFeature />
