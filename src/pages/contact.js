@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text, Link } from 'theme-ui';
-import { IoMdArrowRoundBack } from 'react-icons/io';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
 import ContactForm from 'components/contact-form';
@@ -10,7 +10,7 @@ export default function Contact() {
     <ThemeProvider theme={theme}>
       <Link href="/" sx={styles.links.nav}>
         <Box sx={styles.headerContainer}>
-          <IoMdArrowRoundBack />
+          <FaArrowAltCircleLeft />
           <Text as="p" sx={styles.headerContainer.text}>
             Back to home
           </Text>
@@ -45,6 +45,7 @@ const styles = {
     cursor: 'pointer',
     display: 'flex',
     justifyContent: 'left',
+    alignItems: 'center',
     text: {
       ml: '15px',
     },

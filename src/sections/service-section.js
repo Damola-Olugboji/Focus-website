@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 /** @jsx jsx */
-import { jsx, Container, Box, Grid, Text, Heading, Button, Image } from 'theme-ui';
+import { jsx, Container, Box, Grid, Text, Heading, Button, Image, ThemeProvider } from 'theme-ui';
 import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
+import { keyframes } from '@emotion/core';
+import { useMediaQuery } from 'react-responsive'
 import { IoIosPlay } from 'react-icons/io';
 import Link from 'next/link';
-
-import ServiceThumb from 'assets/banner-image6.jpeg';
+import ServiceThumb from 'assets/image7.jpeg';
 import shapePattern from 'assets/shape-pattern1.png';
+import theme from 'theme'
+import BannerImg from 'assets/content-image.jpg';
+
 
 const data = {
   subTitle: 'Who we are',
@@ -26,48 +30,103 @@ const data = {
 };
 
 export default function ServiceSection() {
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' })
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
   };
   return (
-    <section sx={{ variant: 'section.services' }} id="about">
-      <Container sx={styles.containerBox}>
-        <Box sx={styles.thumbnail}>
-          <Image src={ServiceThumb} alt="Thumbnail" sx={styles.imageThumbnail} />
-          <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="shape" />
-          </Box>
-        </Box>
-        <Box sx={styles.contentBox}>
-          <TextFeature subTitle={data.subTitle} title={data.title}></TextFeature>
-          <Grid sx={styles.grid}>
-            {data.features.map((feature) => (
-              <Box sx={styles.card} key={feature.id}>
-                <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}> {feature.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}> {feature.text}</Text>
-                  <Link href="/contact" sx={styles.wrapper.links.nav} passHref>
-                    <Text>
-                      {' '}
-                      <u>{feature.linkText}</u>
-                    </Text>
-                  </Link>
-                </Box>
+    <ThemeProvider theme={theme}>
+      {isMobile ?
+        <section sx={{ variant: 'section.services' }} id="about" >
+          <Container sx={styles.containerBox}>
+            <Box sx={styles.thumbnail}>
+              <Image src={BannerImg} alt="Thumbnail" sx={styles.image} />
+              <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
+                <span>
+                  <IoIosPlay />
+                </span>
+              </Button>
+              <Box sx={styles.shapeBox}>
+                <Image src={shapePattern} alt="Shape" />
               </Box>
-            ))}
-          </Grid>
-        </Box>
-        <ModalVideo channel="youtube" isOpen={videoOpen} videoId="EbDMNjT-QpI" onClose={() => setVideoOpen(false)} />
-      </Container>
-    </section>
+            </Box>
+            <Box sx={styles.contentBox}>
+              <TextFeature subTitle={data.subTitle} title={data.title}></TextFeature>
+              <Grid sx={styles.grid}>
+                {data.features.map((feature) => (
+                  <Box sx={styles.card} key={feature.id}>
+                    <Box sx={styles.wrapper}>
+                      <Heading sx={styles.wrapper.title}> {feature.title}</Heading>
+                      <Text sx={styles.wrapper.subTitle}> {feature.text}</Text>
+                      <Link href="/contact" sx={styles.wrapper.links.nav} passHref>
+                        <Text>
+                          {' '}
+                          <u>{feature.linkText}</u>
+                        </Text>
+                      </Link>
+                    </Box>
+                  </Box>
+                ))}
+              </Grid>
+            </Box>
+            <ModalVideo channel="youtube" isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
+          </Container>
+        </section >
+        :
+        <section sx={{ variant: 'section.services' }} id="about" >
+          <Container sx={styles.containerBox}>
+            <Box sx={styles.thumbnail}>
+              <Image src={ServiceThumb} alt="Thumbnail" sx={styles.imageThumbnail} />
+              <Box sx={styles.shapeBox}>
+                <Image src={shapePattern} alt="shape" />
+              </Box>
+            </Box>
+            <Box sx={styles.contentBox}>
+              <TextFeature subTitle={data.subTitle} title={data.title}></TextFeature>
+              <Grid sx={styles.grid}>
+                {data.features.map((feature) => (
+                  <Box sx={styles.card} key={feature.id}>
+                    <Box sx={styles.wrapper}>
+                      <Heading sx={styles.wrapper.title}> {feature.title}</Heading>
+                      <Text sx={styles.wrapper.subTitle}> {feature.text}</Text>
+                      <Link href="/contact" sx={styles.wrapper.links.nav} passHref>
+                        <Text>
+                          {' '}
+                          <u>{feature.linkText}</u>
+                        </Text>
+                      </Link>
+                    </Box>
+                  </Box>
+                ))}
+              </Grid>
+            </Box>
+            <ModalVideo channel="youtube" isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
+          </Container>
+        </section >
+      }
+    </ThemeProvider>
+
   );
 }
 
+
+const playPluse = keyframes`
+  from {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+`;
+
 const styles = {
-  imageThumbnail: {
-    borderRadius: '20px',
+  image: {
+    borderRadius: 20,
   },
   coreFeature: {
     py: [0, null, null, 2, null, 7],
@@ -104,7 +163,7 @@ const styles = {
     width: ['100%', null, null, 315, 390, 450, null, 500],
     flexShrink: 0,
     mb: [7, null, 60, 0],
-    textAlign: ['center', null, null, 'left'],
+    textAlign: ['center', null, null, 'center'],
   },
   grid: {
     pr: [2, 0, null, null, 6, '70px'],
@@ -174,6 +233,48 @@ const styles = {
       position: 'absolute',
       top: 0,
       left: 0,
+    },
+  },
+  videoBtn: {
+    zIndex: 2,
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: ['60px', null, '80px', null, '100px'],
+    height: ['60px', null, '80px', null, '100px'],
+    p: '0px !important',
+    backgroundColor: 'transparent',
+    '&::before': {
+      position: 'absolute',
+      content: '""',
+      left: '50%',
+      top: '50%',
+      transform: 'translateX(-50%) translateY(-50%)',
+      display: 'block',
+      width: ['60px', null, '80px', null, '100px'],
+      height: ['60px', null, '80px', null, '100px'],
+      backgroundColor: 'primary',
+      borderRadius: '50%',
+      animation: `${playPluse} 1.5s ease-out infinite`,
+      opacity: 0.5,
+    },
+    '> span': {
+      backgroundColor: 'rgba(255,255,255,0.3)',
+      width: 'inherit',
+      height: 'inherit',
+      textAlign: 'center',
+      borderRadius: '50%',
+      cursor: 'pointer',
+      transition: 'all 0.5s',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'relative',
+      zIndex: 2,
+    },
+    svg: {
+      fontSize: [40, null, 48, null, 62],
     },
   },
 };

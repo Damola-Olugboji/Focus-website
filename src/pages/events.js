@@ -2,7 +2,7 @@ import BasicTimeline from 'components/timeline';
 import React from 'react';
 import { Box, Container, Button, Flex, Text } from 'theme-ui';
 import Link from 'next/link';
-import { IoMdArrowRoundBack } from 'react-icons/io';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
 
@@ -12,7 +12,7 @@ export default function Events() {
       <div>
         <Link href="/">
           <Box sx={styles.headerContainer}>
-            <IoMdArrowRoundBack />
+            <FaArrowAltCircleLeft />
             <Text as="p" sx={styles.headerContainer.text}>
               <a> Back to home</a>
             </Text>
@@ -48,6 +48,7 @@ const styles = {
     cursor: 'pointer',
     display: 'flex',
     fontWeight: 'bold',
+    alignItems: 'center',
     textDecoration: 'none',
     justifyContent: 'left',
     text: {

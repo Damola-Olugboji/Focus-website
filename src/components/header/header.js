@@ -5,6 +5,7 @@ import { Link as Navlink } from 'react-scroll';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 import Link from 'next/link';
+import { FaRegStar } from 'react-icons/fa'
 import { red } from '@material-ui/core/colors';
 
 export default function Header({ className }) {
@@ -24,8 +25,8 @@ export default function Header({ className }) {
             </Navlink>
           ))}
         </Flex>
-        <Link href="/contact" passHref>
-          <Button>Get in Touch</Button>
+        <Link href="/podcast" passHref>
+          <Button >  Podcasts</Button>
         </Link>
         <MobileDrawer />
       </Container>
@@ -47,6 +48,7 @@ const positionAnim = keyframes`
 `;
 
 const styles = {
+
   links: {
     nav: {
       fontWeight: 'bold',

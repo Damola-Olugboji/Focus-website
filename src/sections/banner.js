@@ -1,11 +1,22 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
-import BannerImg from 'assets/banner-img.jpg';
-import BannerImg2 from 'assets/banner-image2.jpg';
-import BannerImg3 from 'assets/banner-image3.gif';
-import BannerImg4 from 'assets/banner-image4.jpeg';
-import BannerImg5 from 'assets/banner-image5.gif';
+import Img from 'assets/image.jpeg';
+import Img1 from 'assets/image1.png';
+import Img2 from 'assets/image2.jpg';
+import Img3 from 'assets/image3.gif';
+import Img4 from 'assets/image4.jpeg';
+import Img5 from 'assets/image5.jpeg';
+import Img7 from 'assets/image7.jpeg';
+import Img8 from 'assets/image8.jpeg';
+import Img9 from 'assets/image9.jpeg';
+import Img10 from 'assets/image10.jpeg';
+import Img11 from 'assets/image11.jpeg';
+import Img12 from 'assets/image12.jpeg';
+import Img13 from 'assets/image13.jpeg';
+import Img14 from 'assets/image14.jpeg';
+import Img15 from 'assets/image15.jpeg';
+
 import { Carousel } from 'react-responsive-carousel';
 import { SubwayTwoTone } from '@material-ui/icons';
 
@@ -24,19 +35,32 @@ export default function Banner() {
         <Box sx={styles.banner.imageBox}>
           <Carousel showStatus={false} showIndicators={false} swipeable={false} interval={3000} autoPlay={true} infiniteLoop={true}>
             <div>
-              <Image sx={styles.image} src={BannerImg3} />
+              <Image sx={styles.image} src={Img1} />
             </div>
             <div>
-              <Image sx={styles.image} src={BannerImg4} />
+              <Image sx={styles.image} src={Img10} />
             </div>
             <div>
-              <Image sx={styles.image} src={BannerImg} />
+              <Image sx={styles.image} src={Img3} />
+            </div>
+
+            <div>
+              <Image sx={styles.image} src={Img11} />
             </div>
             <div>
-              <Image sx={styles.image} src={BannerImg5} />
+              <Image sx={styles.image} src={Img2} />
             </div>
             <div>
-              <Image sx={styles.image} src={BannerImg2} />
+              <Image sx={styles.image} src={Img9} />
+            </div>
+            <div>
+              <Image sx={styles.image} src={Img} />
+            </div>
+            <div>
+              <Image sx={styles.image} src={Img12} />
+            </div>
+            <div>
+              <Image sx={styles.image} src={Img15} />
             </div>
           </Carousel>
         </Box>
@@ -47,7 +71,7 @@ export default function Banner() {
 
 const styles = {
   image: {
-    borderRadius: 20,
+    borderRadius: 0,
   },
   banner: {
     bannerHeader: {

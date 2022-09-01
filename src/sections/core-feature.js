@@ -1,14 +1,15 @@
 /** @jsx jsx */
-import { jsx, Container, Box, Image, Button } from 'theme-ui';
+import { jsx, Container, Box, Image, Button, ThemeProvider } from 'theme-ui';
 import TextFeature from 'components/text-feature';
 import BannerImg from 'assets/content-image.jpg';
 import shapePattern from 'assets/shape-pattern2.png';
 import { keyframes } from '@emotion/core';
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'next/link';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
-
+import { useMediaQuery } from 'react-responsive'
+import theme from 'theme'
 const data = {
   subTitle: 'Focus 101 Event Timeline',
   title: 'Stay up to date with our upcoming events!',
@@ -19,6 +20,7 @@ const data = {
 };
 
 export default function CoreFeature() {
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' })
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
@@ -26,30 +28,46 @@ export default function CoreFeature() {
   };
 
   return (
-    <section sx={{ variant: 'section.coreFeature' }} id="events">
-      <Container sx={styles.containerBox}>
-        <Box sx={styles.contentBox}>
-          <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />{' '}
-          <Link href="/events" passHref>
-            <Button>
-              <a> View Events </a>
-            </Button>
-          </Link>
-        </Box>
-        <Box sx={styles.thumbnail}>
-          <Image src={BannerImg} alt="Thumbnail" sx={styles.image} />
-          <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
-            <span>
-              <IoIosPlay />
-            </span>
-          </Button>
-          <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="Shape" />
-          </Box>
-        </Box>
-        <ModalVideo channel="youtube" isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
-      </Container>
-    </section>
+    <ThemeProvider theme={theme}>
+      {isMobile ?
+        <section sx={{ variant: 'section.coreFeature' }} id="events">
+          <Container sx={styles.containerBox}>
+            <Box sx={styles.contentBox}>
+              <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />{' '}
+              <Link href="/events" passHref>
+                <Button>
+                  <a> View Events </a>
+                </Button>
+              </Link>
+            </Box>
+          </Container>
+        </section>
+        :
+        <section sx={{ variant: 'section.coreFeature' }} id="events">
+          <Container sx={styles.containerBox}>
+            <Box sx={styles.contentBox}>
+              <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />{' '}
+              <Link href="/events" passHref>
+                <Button>
+                  <a> View Events </a>
+                </Button>
+              </Link>
+            </Box>
+            <Box sx={styles.thumbnail}>
+              <Image src={BannerImg} alt="Thumbnail" sx={styles.image} />
+              <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
+                <span>
+                  <IoIosPlay />
+                </span>
+              </Button>
+              <Box sx={styles.shapeBox}>
+                <Image src={shapePattern} alt="Shape" />
+              </Box>
+            </Box>
+            <ModalVideo channel="youtube" isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
+          </Container>
+        </section>}
+    </ThemeProvider>
   );
 }
 
