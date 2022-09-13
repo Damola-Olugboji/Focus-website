@@ -12,6 +12,12 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
             wordWrap: 'break-word',
             pl: '60px',
             pr: '40px',
+            width: '70%',
+            fontSize: '18px',
+            fontWeight: 400,
+        },
+        headerBox: {
+            width: '25%'
         },
         iconFlex: {
             pt: '20px',
@@ -19,7 +25,7 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
             justifyContent: 'space-around'
         },
         iconStyle: {
-            fontSize: '30px',
+            fontSize: '37px',
             cursor: 'pointer'
         },
         outerBox: {
@@ -36,13 +42,15 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
                 lineHeight: '30px'
             },
             display: 'flex',
-            justifyContent: 'space-evenly',
-            flexDirection: 'row',
+            justifyContent: 'center',
+            flexFlow: 'wrap',
+            // justifyContent: 'space-evenly',
+            // flexDirection: 'row',
             alignItems: 'center',
             // flexShrink: 1,
             // flexWrap: 'wrap',
             // flexGrow: 1,
-            verticalAlign: 'middle',
+            // verticalAlign: 'top',
             backgroundColor: disabled ? "#A9A9A9" : 'background',
             pt: '40px',
             pb: '40px',
@@ -122,7 +130,7 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
                 <Box sx={mobileStyle.outerBox}>
                     {!disabled ?
                         (<Card sx={mobileStyle.cardStyle}>
-                            <Box sx={{ width: '100%' }}>
+                            <Box sx={{ width: "100%" }}>
                                 <Text as='h2' sx={{ textAlign: 'center' }} >{title}</Text>
                                 <Text as='h3' sx={{ textAlign: 'center', pt: '10px' }} >{releaseDate}</Text>
                                 <Box sx={styles.iconFlex}>
@@ -152,7 +160,7 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
                 <Box sx={styles.outerBox}>
                     {!disabled ?
                         (<Card sx={styles.cardStyle}>
-                            <Box sx={{ width: '100%' }}>
+                            <Box sx={styles.headerBox}>
                                 <Text as='h2' sx={{ textAlign: 'center' }} >{title}</Text>
                                 <Text as='h3' sx={{ textAlign: 'center', pt: '10px' }} >{releaseDate}</Text>
                                 <Box sx={styles.iconFlex}>
@@ -162,7 +170,7 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
                                 </Box>
                             </Box>
                             <Box sx={styles.descriptionBox}>
-                                <Text as='h3' >
+                                <Text as='p' >
                                     {description}
                                 </Text>
                             </Box>

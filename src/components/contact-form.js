@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import { Box, Button, Label, Input, Select, Flex, Radio } from 'theme-ui';
 import { Modal } from 'react-responsive-modal';
+import { useMediaQuery } from 'react-responsive'
 import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
@@ -22,6 +23,7 @@ export default function ContactForm() {
     );
     e.target.reset();
   }
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' })
 
   return (
     <Box>
@@ -31,20 +33,37 @@ export default function ContactForm() {
         <Label htmlFor="age">Age</Label>
         <Input name="age" id="age" mb={5} />
         <Label htmlFor="level">Level</Label>
-        <Flex mb={5}>
-          <Label>
-            <Radio name="level" value="freshman" sx={styles.radioStyle} /> Freshman
-          </Label>
-          <Label>
-            <Radio name="level" value="sophomore" sx={styles.radioStyle} /> Sophomore
-          </Label>
-          <Label>
-            <Radio name="level" value="junior" sx={styles.radioStyle} /> Junior
-          </Label>
-          <Label>
-            <Radio name="level" value="senior" sx={styles.radioStyle} /> Senior
-          </Label>
-        </Flex>
+        {isMobile ? <Box mb={5} sx={{ justifyContent: 'space-evenly' }}>
+          <Box sx={{ display: 'flex', pb: '20px' }}>
+            <Label sx={{ pr: '50px' }}>
+              <Radio name="level" value="freshman" sx={styles.radioStyle} /> Freshman
+            </Label>
+            <Label>
+              <Radio name="level" value="sophomore" sx={styles.radioStyle} /> Sophomore
+            </Label>
+          </Box>
+          <Box sx={{ display: 'flex' }}>
+            <Label>
+              <Radio name="level" value="junior" sx={styles.radioStyle} /> Junior
+            </Label>
+            <Label>
+              <Radio name="level" value="senior" sx={styles.radioStyle} /> Senior
+            </Label>
+          </Box>
+        </Box>
+          : <Flex>
+            <Label>
+              <Radio name="level" value="freshman" sx={styles.radioStyle} /> Freshman
+            </Label>
+            <Label>
+              <Radio name="level" value="sophomore" sx={styles.radioStyle} /> Sophomore
+            </Label>
+            <Label>
+              <Radio name="level" value="junior" sx={styles.radioStyle} /> Junior
+            </Label>
+            <Label>
+              <Radio name="level" value="senior" sx={styles.radioStyle} /> Senior
+            </Label></Flex>}
         <Label htmlFor="university">What post-secondary institution are you attending?</Label>
         <Input name="university" id="university" mb={5} />
         <Label htmlFor="major">Major</Label>

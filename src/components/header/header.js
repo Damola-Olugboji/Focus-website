@@ -7,9 +7,10 @@ import menuItems from './header.data';
 import Link from 'next/link';
 import { FaRegStar } from 'react-icons/fa'
 import { red } from '@material-ui/core/colors';
-
 export default function Header({ className }) {
+
   return (
+
     <header sx={styles.header} className={className} id="Header">
       <Container sx={styles.container}>
         <h1>
@@ -26,8 +27,9 @@ export default function Header({ className }) {
           ))}
         </Flex>
         <Link href="/podcast" passHref>
-          <Button >  Podcasts</Button>
+          <Button>Podcasts</Button>
         </Link>
+
         <MobileDrawer />
       </Container>
     </header>

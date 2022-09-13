@@ -55,7 +55,7 @@ export default function CoreFeature() {
             </Box>
             <Box sx={styles.thumbnail}>
               <Image src={BannerImg} alt="Thumbnail" sx={styles.image} />
-              <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
+              <Button sx={styles.videoBtn} onClick={() => setVideoOpen(true)} aria-label="Play Button">
                 <span>
                   <IoIosPlay />
                 </span>
@@ -64,7 +64,7 @@ export default function CoreFeature() {
                 <Image src={shapePattern} alt="Shape" />
               </Box>
             </Box>
-            <ModalVideo channel="youtube" isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
+            <ModalVideo channel="youtube" autoplay isOpen={videoOpen} videoId="_BJNNFRyuOs" onClose={() => setVideoOpen(false)} />
           </Container>
         </section>}
     </ThemeProvider>
@@ -88,6 +88,7 @@ const styles = {
     borderRadius: 20,
   },
   containerBox: {
+    mt: '110px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',

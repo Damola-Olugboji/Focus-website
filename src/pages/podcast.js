@@ -39,6 +39,7 @@ const styles = {
         pl: '35px',
     },
     podcastContainer: {
-        display: 'flex'
+        display: 'flex',
+        pb: '40px',
     }
 }

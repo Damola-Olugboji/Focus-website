@@ -64,24 +64,29 @@ export default {
       alignItems: 'center',
       justifyContent: 'space-between',
     },
-    main: {},
+    main: {
+      mb: '-65 px'
+    },
   },
   section: {
-    keyFeature: {
-      pt: [8, null, 9, null, null, 10],
-      pb: ['90px', null, 9, null, null, 10, null, '165px'],
+    services: {
+      pt: '120px',
+      mb: ['50px', null, 9, null, null, 10, null, '50px'],
+      '@media screen and (max-width: 600px)': {
+        pt: '40px',
+      },
     },
     coreFeature: {
-      pt: '100px',
-      pb: [8, null, 9, null, null, 10, null, '170px'],
+      pb: [8, null, 9, null, null, 10, null, '100px'],
       overflow: 'hidden',
       '@media screen and (max-width: 600px)': {
         pt: '0px',
       },
     },
-    services: {
+    contact: {
+      backgroundColor: 'primary',
       pt: '110px',
-      pb: ['90px', null, 9, null, null, 10, null, '150px'],
+      pb: ['90px', null, 9, null, null, 10, null, '0px'],
       '@media screen and (max-width: 600px)': {
         pt: '40px',
       },
