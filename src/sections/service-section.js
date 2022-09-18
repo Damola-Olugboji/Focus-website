@@ -92,7 +92,7 @@ export default function ServiceSection() {
                       <Heading sx={styles.wrapper.title}> {feature.title}</Heading>
                       <Text sx={styles.wrapper.subTitle}> {feature.text}</Text>
                       <Link href="/contact" sx={styles.wrapper.links.nav} passHref>
-                        <Text>
+                        <Text sx={styles.wrapper.links.navText}>
                           {' '}
                           <u>{feature.linkText}</u>
                         </Text>
@@ -208,6 +208,9 @@ const styles = {
     links: {
       bold: {
         fontWeight: 'bold',
+      },
+      navText: {
+        cursor: 'pointer',
       },
       nav: {
         fontSize: [1, null, null, '14px', 1],

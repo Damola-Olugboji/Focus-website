@@ -33,9 +33,9 @@ export default function CoreFeature() {
         <section sx={{ variant: 'section.coreFeature' }} id="events">
           <Container sx={styles.containerBox}>
             <Box sx={styles.contentBox}>
-              <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />{' '}
+              <TextFeature subTitle={data.subTitle} title={data.title} mobile={isMobile} />{' '}
               <Link href="/events" passHref>
-                <Button>
+                <Button sx={styles.button}>
                   <a> View Events </a>
                 </Button>
               </Link>
@@ -46,7 +46,7 @@ export default function CoreFeature() {
         <section sx={{ variant: 'section.coreFeature' }} id="events">
           <Container sx={styles.containerBox}>
             <Box sx={styles.contentBox}>
-              <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />{' '}
+              <TextFeature subTitle={data.subTitle} title={data.title} mobile={isMobile} />{' '}
               <Link href="/events" passHref>
                 <Button>
                   <a> View Events </a>
@@ -84,6 +84,9 @@ const playPluse = keyframes`
 `;
 
 const styles = {
+  button: {
+    fontSize: '20px'
+  },
   image: {
     borderRadius: 20,
   },

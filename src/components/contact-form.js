@@ -51,7 +51,7 @@ export default function ContactForm() {
             </Label>
           </Box>
         </Box>
-          : <Flex>
+          : <Flex mb={5}>
             <Label>
               <Radio name="level" value="freshman" sx={styles.radioStyle} /> Freshman
             </Label>

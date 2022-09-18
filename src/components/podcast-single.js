@@ -8,6 +8,10 @@ import useCollapse from 'react-collapsed'
 export default function PodcastSingle({ title, description, disabled, releaseDate, extraDescription, spotifyLink, youtubeLink, anchorLink, image, }) {
 
     const styles = {
+        link: {
+            color: '#433d39',
+            textDecoration: 'none',
+        },
         descriptionBox: {
             wordWrap: 'break-word',
             pl: '60px',
@@ -22,11 +26,12 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
         iconFlex: {
             pt: '20px',
             display: 'flex',
-            justifyContent: 'space-around'
+            justifyContent: 'space-around',
+
         },
         iconStyle: {
             fontSize: '37px',
-            cursor: 'pointer'
+            cursor: 'pointer',
         },
         outerBox: {
             display: 'flex',
@@ -164,9 +169,9 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
                                 <Text as='h2' sx={{ textAlign: 'center' }} >{title}</Text>
                                 <Text as='h3' sx={{ textAlign: 'center', pt: '10px' }} >{releaseDate}</Text>
                                 <Box sx={styles.iconFlex}>
-                                    <FaYoutube style={styles.iconStyle} ></FaYoutube>
-                                    <FaSpotify style={styles.iconStyle}></FaSpotify>
-                                    <FaAnchor style={styles.iconStyle}></FaAnchor>
+                                    <Link sx={styles.link} href={youtubeLink} target="_blank"><FaYoutube style={styles.iconStyle} ></FaYoutube></Link>
+                                    <Link sx={styles.link} href={spotifyLink} target="_blank"> <FaSpotify style={styles.iconStyle} ></FaSpotify></Link>
+                                    <Link sx={styles.link} href={anchorLink} target="_blank"> <FaAnchor style={styles.iconStyle} ></FaAnchor></Link>
                                 </Box>
                             </Box>
                             <Box sx={styles.descriptionBox}>
