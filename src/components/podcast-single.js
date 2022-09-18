@@ -139,9 +139,9 @@ export default function PodcastSingle({ title, description, disabled, releaseDat
                                 <Text as='h2' sx={{ textAlign: 'center' }} >{title}</Text>
                                 <Text as='h3' sx={{ textAlign: 'center', pt: '10px' }} >{releaseDate}</Text>
                                 <Box sx={styles.iconFlex}>
-                                    <FaYoutube style={mobileStyle.iconStyle} ></FaYoutube>
-                                    <FaSpotify style={mobileStyle.iconStyle}></FaSpotify>
-                                    <FaAnchor style={mobileStyle.iconStyle}></FaAnchor>
+                                    <Link sx={styles.link} href={youtubeLink} target="_blank"><FaYoutube style={mobileStyle.iconStyle} ></FaYoutube></Link>
+                                    <Link sx={styles.link} href={spotifyLink} target="_blank"> <FaSpotify style={mobileStyle.iconStyle} ></FaSpotify></Link>
+                                    <Link sx={styles.link} href={anchorLink} target="_blank"> <FaAnchor style={mobileStyle.iconStyle} ></FaAnchor></Link>
                                 </Box>
                             </Box>
 
